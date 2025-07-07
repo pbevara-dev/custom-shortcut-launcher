@@ -37,4 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!name || !url) return;
 
     chrome.storage.sync.get('shortcuts', (data) => {
-      const shortcuts = d
+      const shortcuts = data.shortcuts || [];
+      shortcuts.push({ name, url });
+      chrome.storage.sync.set({ shortcuts }, () => {
+        renderShortcuts(shortcuts);
+        form.reset();
+      });
+    });
+  });
+});
