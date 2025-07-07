@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Shortcut Launcher",
+  "version": "1.0",
+  "description": "Define custom keyboard shortcuts to open your favorite websites.",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "permissions": [
+    "storage"
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Open the shortcut launcher popup"
+    }
+  }
+}
